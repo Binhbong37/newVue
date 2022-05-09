@@ -1,11 +1,15 @@
 import Vue from 'vue';
 
 import router from './routes';
+
 import App from './App.vue';
+Vue.filter('toUpperCase', (value) => {
+    return value.toUpperCase();
+});
 
 Vue.config.productionTip = false;
 
 new Vue({
-    render: (h) => h(App),
     router,
+    render: (h) => h(App),
 }).$mount('#app');
