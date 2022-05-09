@@ -8,10 +8,20 @@ import UserEdit from './components/users/UserEdit.vue';
 import UserDetail from './components/users/UserDetail.vue';
 import Index from './components/users/Index.vue';
 
+import Header from './components/layout/Header.vue';
+import Error404 from './components/404.vue';
+
 Vue.use(VueRouter);
 
 let routes = [
-    { path: '/', name: 'homePage', component: HomePage },
+    {
+        path: '/',
+        name: 'homePage',
+        components: {
+            default: HomePage,
+            header: Header,
+        },
+    },
     { path: '/contact', name: 'contact', component: Contact },
     {
         path: '/users',
@@ -23,6 +33,8 @@ let routes = [
             { path: ':id/edit', name: 'userEdit', component: UserEdit },
         ],
     },
+    { path: '/404', name: 'notFound', component: Error404 },
+    { path: '*', redirect: '/404' },
 ];
 
 const router = new VueRouter({

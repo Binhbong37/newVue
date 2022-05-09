@@ -1,6 +1,8 @@
 <template>
   <div class="w-[500px] h-[300px] bg-[#10b981] mx-auto p-5">
     <h1>Users Page</h1>
+
+    <router-link to="/">Back to home</router-link>
     <hr />
     <div class="mt-5">
       <router-view />

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Header />
+    <router-view name="header" />
     <div class="container mx-auto mt-5">
-      <router-view />
+      <transition name="slide">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "./components/layout/Header.vue";
 export default {
-  components: { Header },
   name: "App",
   data() {
     return {
@@ -22,15 +22,21 @@ export default {
 </script>
 
 <style scope>
-.fade-enter {
+.slide-leave-active {
+  transition: opacity 1s ease;
   opacity: 0;
+  animation: slide-out 1s ease-out forwards;
 }
-.fade-enter-active {
-  transition: opacity 1s;
+.slide-leave {
+  opacity: 1;
+  transform: translateX(0);
 }
-
-.fade-leave-active {
-  transition: opacity 1s;
-  opacity: 0;
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(30px);
+  }
 }
 </style>

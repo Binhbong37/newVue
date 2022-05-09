@@ -2,6 +2,11 @@
   <div class="bg-[#ca8a04] h-[100px]">
     <h1>User Edit</h1>
     <p>{{ $route.params }}</p>
+    <hr />
+    <ul>
+      <li>locate: {{ $route.query.location }}</li>
+      <li>Browser: {{ $route.query.browser }}</li>
+    </ul>
   </div>
 </template>
 

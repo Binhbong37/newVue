@@ -4,7 +4,13 @@
     <p>ID Users:{{ id }}</p>
     <p>ID Users:{{ $route.params.id }}</p>
     <hr />
-    <router-link :to="{ name: 'userEdit', params: { id: $route.params.id } }">
+    <router-link
+      :to="{
+        name: 'userEdit',
+        params: { id: $route.params.id },
+        query: { location: 'vi', browser: 'chrome' },
+      }"
+    >
       <p class="text-white">EDIT USER</p>
     </router-link>
   </div>
