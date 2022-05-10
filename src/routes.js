@@ -29,7 +29,15 @@ let routes = [
         component: Users,
         children: [
             { path: '', name: 'Index', component: Index },
-            { path: ':id', name: 'userDetail', component: UserDetail },
+            {
+                path: ':id',
+                name: 'userDetail',
+                component: UserDetail,
+                beforeEnter: (to, from, next) => {
+                    console.log('action route detail');
+                    next();
+                },
+            },
             { path: ':id/edit', name: 'userEdit', component: UserEdit },
         ],
     },
@@ -40,6 +48,19 @@ let routes = [
 const router = new VueRouter({
     mode: 'history',
     routes,
+    scrollBehavior(to, from, savePosition) {
+        if (savePosition) {
+            return savePosition;
+        }
+        if (to.hash) {
+            return { selector: to.hash };
+        }
+    },
+});
+
+router.beforeEach((to, from, next) => {
+    console.log('Global route guards');
+    next();
 });
 
 export default router;

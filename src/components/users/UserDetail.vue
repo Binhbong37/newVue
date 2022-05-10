@@ -4,13 +4,7 @@
     <p>ID Users:{{ id }}</p>
     <p>ID Users:{{ $route.params.id }}</p>
     <hr />
-    <router-link
-      :to="{
-        name: 'userEdit',
-        params: { id: $route.params.id },
-        query: { location: 'vi', browser: 'chrome' },
-      }"
-    >
+    <router-link :to="link">
       <p class="text-white">EDIT USER</p>
     </router-link>
   </div>
@@ -28,6 +22,12 @@ export default {
     return {
       name: "",
       id: this.$route.params.id,
+      link: {
+        name: "userEdit",
+        params: { id: this.$route.params.id },
+        query: { location: "vi", browser: "chrome" },
+        hash: "#vuejs",
+      },
     };
   },
   methods: {

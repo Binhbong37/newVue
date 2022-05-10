@@ -7,6 +7,9 @@
       <li>locate: {{ $route.query.location }}</li>
       <li>Browser: {{ $route.query.browser }}</li>
     </ul>
+    <div class="bg-[#0ea5e9] h-[700px]"></div>
+    <h1 id="vuejs" class="text-4xl font-bold">Learn Vue Js</h1>
+    <div class="bg-[#0ea5e9] h-[500px]"></div>
   </div>
 </template>
 
