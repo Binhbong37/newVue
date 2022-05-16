@@ -25,7 +25,6 @@ let routes = [
     { path: '/contact', name: 'contact', component: Contact },
     {
         path: '/users',
-        name: 'users',
         component: Users,
         children: [
             { path: '', name: 'Index', component: Index },
