@@ -7,6 +7,7 @@ import Contact from './components/Contact.vue';
 import UserEdit from './components/users/UserEdit.vue';
 import UserDetail from './components/users/UserDetail.vue';
 import Index from './components/users/Index.vue';
+import Role from './components/Role.vue';
 
 import Header from './components/layout/Header.vue';
 import Error404 from './components/404.vue';
@@ -23,6 +24,7 @@ let routes = [
         },
     },
     { path: '/contact', name: 'contact', component: Contact },
+    { path: '/role', name: 'role', component: Role },
     {
         path: '/users',
         component: Users,
