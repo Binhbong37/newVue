@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#ca8a04] h-[100px]">
-    <h1>User Edit</h1>
+    <h1 class="font-bold p-5">User Edit</h1>
     <p>{{ $route.params }}</p>
     <hr />
     <ul>

@@ -8,7 +8,7 @@
         <ul class="hidden md:flex">
           <li><router-link class="px-4" to="/users">Users</router-link></li>
           <li>
-            <router-link class="px-4" to="/user-edit">UserEdit</router-link>
+            <router-link class="px-4" to="/role">Role</router-link>
           </li>
           <li>
             <router-link class="px-4" to="/user-detail/10"
